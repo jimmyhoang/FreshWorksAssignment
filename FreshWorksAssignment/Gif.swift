@@ -12,5 +12,9 @@ import UIKit
 class Gif {
     
     var gifImage: UIImage = UIImage()
-    var gifURL: String?
+    var gifURL: String
+    
+    init(URL:String) {
+        gifURL = URL
+    }
 }
