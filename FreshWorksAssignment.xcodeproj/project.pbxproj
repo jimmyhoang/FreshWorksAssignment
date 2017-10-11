@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251C581F7A2CE9E8DBF3E03A /* Pods_FreshWorksAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D68B0DA6A482E7660B5C4E2 /* Pods_FreshWorksAssignment.framework */; };
 		FF030CF41F8D79ED0050B5DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF030CF31F8D79ED0050B5DA /* AppDelegate.swift */; };
 		FF030CF61F8D79ED0050B5DA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF030CF51F8D79ED0050B5DA /* FirstViewController.swift */; };
 		FF030CF81F8D79ED0050B5DA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF030CF71F8D79ED0050B5DA /* SecondViewController.swift */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B75896633037FB81727F578 /* Pods-FreshWorksAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshWorksAssignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreshWorksAssignment/Pods-FreshWorksAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		8D68B0DA6A482E7660B5C4E2 /* Pods_FreshWorksAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreshWorksAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4FC85628F3F3C3E50CD3B04 /* Pods-FreshWorksAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshWorksAssignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreshWorksAssignment/Pods-FreshWorksAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		FF030CF01F8D79ED0050B5DA /* FreshWorksAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshWorksAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF030CF31F8D79ED0050B5DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF030CF51F8D79ED0050B5DA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -35,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				251C581F7A2CE9E8DBF3E03A /* Pods_FreshWorksAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2609DE65DD81DF4BA568F276 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B75896633037FB81727F578 /* Pods-FreshWorksAssignment.debug.xcconfig */,
+				D4FC85628F3F3C3E50CD3B04 /* Pods-FreshWorksAssignment.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2DAB20E73683137C6DF7DCD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D68B0DA6A482E7660B5C4E2 /* Pods_FreshWorksAssignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FF030CE71F8D79ED0050B5DA = {
 			isa = PBXGroup;
 			children = (
 				FF030CF21F8D79ED0050B5DA /* FreshWorksAssignment */,
 				FF030CF11F8D79ED0050B5DA /* Products */,
+				2609DE65DD81DF4BA568F276 /* Pods */,
+				2DAB20E73683137C6DF7DCD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FF030D041F8D79ED0050B5DA /* Build configuration list for PBXNativeTarget "FreshWorksAssignment" */;
 			buildPhases = (
+				DA89AFD798E5D4C5D94EA9E2 /* [CP] Check Pods Manifest.lock */,
 				FF030CEC1F8D79ED0050B5DA /* Sources */,
 				FF030CED1F8D79ED0050B5DA /* Frameworks */,
 				FF030CEE1F8D79ED0050B5DA /* Resources */,
+				C917DAC79F1ACD58507DF844 /* [CP] Embed Pods Frameworks */,
+				D62947CCA487B3327694A087 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,6 +166,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C917DAC79F1ACD58507DF844 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FreshWorksAssignment/Pods-FreshWorksAssignment-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreshWorksAssignment/Pods-FreshWorksAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D62947CCA487B3327694A087 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FreshWorksAssignment/Pods-FreshWorksAssignment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA89AFD798E5D4C5D94EA9E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FreshWorksAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FF030CEC1F8D79ED0050B5DA /* Sources */ = {
@@ -284,6 +365,7 @@
 		};
 		FF030D051F8D79ED0050B5DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B75896633037FB81727F578 /* Pods-FreshWorksAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +381,7 @@
 		};
 		FF030D061F8D79ED0050B5DA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4FC85628F3F3C3E50CD3B04 /* Pods-FreshWorksAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
