@@ -9,10 +9,15 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    var gifArray:[Gif] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NetworkManager.getGifs(search: "dogs") { (gifs) in
+            self.gifArray = gifs
+        }
     }
 
     override func didReceiveMemoryWarning() {
