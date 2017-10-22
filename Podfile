@@ -7,5 +7,6 @@ target 'FreshWorksAssignment' do
 
   # Pods for FreshWorksAssignment
   pod 'Alamofire', '~> 4.5'
+  pod 'AlamofireImage', '~> 3.3'
 
 end
