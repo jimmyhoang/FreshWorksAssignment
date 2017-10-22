@@ -32,8 +32,6 @@ class NetworkManager {
             self.downloadGifs(gifs: gifArray, completion: { (Gifs) in
                 completion(Gifs)
             })
-            
-            
         }
     
     }
@@ -49,7 +47,10 @@ class NetworkManager {
         for gif in gifs {
             Alamofire.download(gif.gifURL, to: destination).response { response in
                 if response.error == nil, let imagePath = response.destinationURL?.path {
-                    guard let image = UIImage(contentsOfFile: imagePath) else {return}
+                    guard let image = UIImage(contentsOfFile: imagePath) else {
+                        print("download error")
+                        return
+                    }
                     gif.gifImage = image
                 }
             }
