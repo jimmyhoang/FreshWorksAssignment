@@ -101,22 +101,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DC1-g1-wMI">
-                                <rect key="frame" x="16" y="120" width="343" height="351"/>
-                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tQw-pf-C6Q">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fNX-1L-XYv">
+                                    <size key="itemSize" width="329" height="287"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="faveGifCell" id="gzn-V4-kXq" customClass="FaveGifCollectionViewCell" customModule="FreshWorksAssignment" customModuleProvider="target">
+                                        <rect key="frame" x="23" y="0.0" width="329" height="287"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="329" height="287"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-dh-Rp2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="287"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6D-6r-kaL">
+                                                    <rect key="frame" x="283" y="0.0" width="46" height="30"/>
+                                                    <state key="normal" title="F"/>
+                                                    <connections>
+                                                        <action selector="faveButton:" destination="gzn-V4-kXq" eventType="touchUpInside" id="bAl-xI-BAg"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="fXE-dh-Rp2" firstAttribute="leading" secondItem="gzn-V4-kXq" secondAttribute="leading" id="LtZ-bg-heO"/>
+                                            <constraint firstItem="A6D-6r-kaL" firstAttribute="top" secondItem="gzn-V4-kXq" secondAttribute="top" id="RWc-vd-xY8"/>
+                                            <constraint firstItem="A6D-6r-kaL" firstAttribute="leading" secondItem="gzn-V4-kXq" secondAttribute="leading" constant="283" id="poq-TE-4vh"/>
+                                            <constraint firstAttribute="trailing" secondItem="A6D-6r-kaL" secondAttribute="trailing" id="q06-4L-rtc"/>
+                                            <constraint firstAttribute="trailing" secondItem="fXE-dh-Rp2" secondAttribute="trailing" id="r7k-61-YBY"/>
+                                            <constraint firstAttribute="bottom" secondItem="fXE-dh-Rp2" secondAttribute="bottom" id="sp7-Vx-45p"/>
+                                            <constraint firstItem="fXE-dh-Rp2" firstAttribute="top" secondItem="gzn-V4-kXq" secondAttribute="top" id="uIs-4o-4Sl"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="gifImage" destination="fXE-dh-Rp2" id="2fJ-3K-H0g"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="Y29-HN-ydd"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="JIs-3E-5hZ"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="DC1-g1-wMI" secondAttribute="trailing" constant="16" id="MvW-2o-Scx"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="DC1-g1-wMI" secondAttribute="bottom" constant="147" id="YHg-Oc-XLr"/>
-                            <constraint firstItem="DC1-g1-wMI" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="16" id="eMg-Wi-57N"/>
-                            <constraint firstItem="DC1-g1-wMI" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="100" id="sfl-9y-f1f"/>
+                            <constraint firstItem="tQw-pf-C6Q" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="N6f-pE-Hz8"/>
+                            <constraint firstItem="tQw-pf-C6Q" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="PfV-63-HCi"/>
+                            <constraint firstItem="tQw-pf-C6Q" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="PgX-FK-BNb"/>
+                            <constraint firstItem="tQw-pf-C6Q" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="XSj-4S-E8n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
-                        <outlet property="imageView" destination="DC1-g1-wMI" id="7mg-yO-pn9"/>
+                        <outlet property="collectionView" destination="tQw-pf-C6Q" id="3DS-5V-UJc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

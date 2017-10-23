@@ -12,6 +12,7 @@ class GifTableViewCell: UITableViewCell {
     
     @IBOutlet weak var gifImageV: UIImageView!
     var gif: Gif!
+    var favouriteGifs = [Gif]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,11 +22,26 @@ class GifTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
-    @IBAction func favouriteButton(_ sender: Any) {
+    @IBAction func favouriteButton(_ sender: Any) {        
+        if let unarchiveGifs = UserDefaults.standard.object(forKey: "favouriteGifs") as? Data {
+            favouriteGifs = NSKeyedUnarchiver.unarchiveObject(with: unarchiveGifs) as! [Gif]
+        }
+
         gif.gifImage = gifImageV.image!
-        print("button pressed")
+        
+        let isFave = favouriteGifs.contains(gif)
+        
+        if (isFave) {
+            let index = favouriteGifs.index(of: gif)
+            favouriteGifs.remove(at: index!)
+        } else {
+            favouriteGifs.append(gif)
+        }
+        
+        let archiveGifs = NSKeyedArchiver.archivedData(withRootObject: favouriteGifs)
+        UserDefaults.standard.set(archiveGifs, forKey: "favouriteGifs")
+        UserDefaults.standard.synchronize()
     }
 }

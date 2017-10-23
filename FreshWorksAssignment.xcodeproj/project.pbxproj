@@ -17,6 +17,7 @@
 		FF030D081F8D7C1B0050B5DA /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF030D071F8D7C1B0050B5DA /* Gif.swift */; };
 		FF030D0E1F8D7E4F0050B5DA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF030D0D1F8D7E4F0050B5DA /* NetworkManager.swift */; };
 		FF030D101F9D56490050B5DA /* GifTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF030D0F1F9D56490050B5DA /* GifTableViewCell.swift */; };
+		FF0E3CDD1F9EA3D30074F2FE /* FaveGifCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0E3CDC1F9EA3D30074F2FE /* FaveGifCollectionViewCell.swift */; };
 		FF14D8071F9DA437006B6900 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF14D8061F9DA437006B6900 /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		FF030D071F8D7C1B0050B5DA /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		FF030D0D1F8D7E4F0050B5DA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FF030D0F1F9D56490050B5DA /* GifTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifTableViewCell.swift; sourceTree = "<group>"; };
+		FF0E3CDC1F9EA3D30074F2FE /* FaveGifCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveGifCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF14D8061F9DA437006B6900 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				FF030D0D1F8D7E4F0050B5DA /* NetworkManager.swift */,
 				FF030D0F1F9D56490050B5DA /* GifTableViewCell.swift */,
 				FF14D8061F9DA437006B6900 /* UIImageExtension.swift */,
+				FF0E3CDC1F9EA3D30074F2FE /* FaveGifCollectionViewCell.swift */,
 			);
 			path = FreshWorksAssignment;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF030CF81F8D79ED0050B5DA /* SecondViewController.swift in Sources */,
+				FF0E3CDD1F9EA3D30074F2FE /* FaveGifCollectionViewCell.swift in Sources */,
 				FF030CF41F8D79ED0050B5DA /* AppDelegate.swift in Sources */,
 				FF14D8071F9DA437006B6900 /* UIImageExtension.swift in Sources */,
 				FF030D101F9D56490050B5DA /* GifTableViewCell.swift in Sources */,

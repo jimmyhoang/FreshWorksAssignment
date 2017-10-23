@@ -17,6 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        if (UserDefaults.standard.object(forKey: "favouriteGifs") == nil) {
+            let favouriteGifs = [Gif]()
+            let archiveGifs = NSKeyedArchiver.archivedData(withRootObject: favouriteGifs)
+            UserDefaults.standard.set(archiveGifs, forKey: "favouriteGifs")
+        }
+        
         return true
     }
 

@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class Gif {
-    
+class Gif: NSObject, NSCoding {
     var gifImage: UIImage
     var gifURL: String
     
@@ -18,4 +17,19 @@ class Gif {
         gifURL = URL
         gifImage = gifData
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.gifURL = aDecoder.decodeObject(forKey: "gifURL") as? String ?? ""
+        self.gifImage = (aDecoder.decodeObject(forKey: "gifImage") as? UIImage)!
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(gifURL, forKey: "gifURL")
+        aCoder.encode(gifImage, forKey: "gifImage")
+    }
+    
+    static func ==(lhs: Gif, rhs: Gif) -> Bool {
+        return lhs === rhs
+    }
 }
+
