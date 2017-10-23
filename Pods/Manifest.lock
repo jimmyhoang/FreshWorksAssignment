@@ -2,15 +2,18 @@ PODS:
   - Alamofire (4.5.1)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
+  - Gifu (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireImage (~> 3.3)
+  - Gifu
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Gifu: 90bd26ea4d65f8322c4cca8cbb0ca1418f5457ad
 
-PODFILE CHECKSUM: edf52d605f6562fbe05d989749cd119f66e5a83f
+PODFILE CHECKSUM: 4e9ab50f99c47734727aac95b21fe2ac9d916cdc
 
 COCOAPODS: 1.3.1
