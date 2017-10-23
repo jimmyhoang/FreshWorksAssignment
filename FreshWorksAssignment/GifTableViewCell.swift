@@ -26,5 +26,6 @@ class GifTableViewCell: UITableViewCell {
 
     @IBAction func favouriteButton(_ sender: Any) {
         gif.gifImage = gifImageV.image!
+        print("button pressed")
     }
 }

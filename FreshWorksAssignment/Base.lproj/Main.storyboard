@@ -30,10 +30,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BKF-g1-xuG">
-                                                    <rect key="frame" x="19" y="19" width="337" height="237"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sD-rn-tfN">
-                                                    <rect key="frame" x="318" y="27" width="30" height="23"/>
+                                                    <rect key="frame" x="337" y="8" width="30" height="30"/>
                                                     <state key="normal" title="F"/>
                                                     <connections>
                                                         <action selector="favouriteButton:" destination="LvL-UE-Wy0" eventType="touchUpInside" id="48p-m9-TQg"/>
@@ -41,14 +41,13 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="BKF-g1-xuG" secondAttribute="trailing" constant="11" id="6Z3-iR-3lh"/>
-                                                <constraint firstItem="0sD-rn-tfN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tql-Iz-FzY" secondAttribute="leadingMargin" id="9nl-G7-CLQ"/>
-                                                <constraint firstItem="0sD-rn-tfN" firstAttribute="top" secondItem="Tql-Iz-FzY" secondAttribute="topMargin" constant="19" id="HD1-CT-HuS"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="0sD-rn-tfN" secondAttribute="trailing" constant="19" id="NGE-ut-Q2F"/>
-                                                <constraint firstItem="BKF-g1-xuG" firstAttribute="leading" secondItem="Tql-Iz-FzY" secondAttribute="leadingMargin" constant="11" id="QbT-4u-waP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="0sD-rn-tfN" secondAttribute="bottom" constant="216.5" id="aoa-Th-vw6"/>
-                                                <constraint firstItem="BKF-g1-xuG" firstAttribute="top" secondItem="Tql-Iz-FzY" secondAttribute="topMargin" constant="11" id="bVD-pb-LLo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BKF-g1-xuG" secondAttribute="bottom" constant="11" id="rgD-43-9rS"/>
+                                                <constraint firstItem="0sD-rn-tfN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tql-Iz-FzY" secondAttribute="leadingMargin" id="Abz-Kj-cal"/>
+                                                <constraint firstAttribute="trailing" secondItem="BKF-g1-xuG" secondAttribute="trailing" id="Qfy-CF-ZND"/>
+                                                <constraint firstItem="0sD-rn-tfN" firstAttribute="trailing" secondItem="Tql-Iz-FzY" secondAttribute="trailingMargin" id="Tyu-fL-OVh"/>
+                                                <constraint firstAttribute="bottom" secondItem="BKF-g1-xuG" secondAttribute="bottom" constant="-0.5" id="W9y-hP-LyW"/>
+                                                <constraint firstItem="BKF-g1-xuG" firstAttribute="leading" secondItem="Tql-Iz-FzY" secondAttribute="leading" id="cQ1-Rc-vlt"/>
+                                                <constraint firstItem="0sD-rn-tfN" firstAttribute="top" secondItem="Tql-Iz-FzY" secondAttribute="topMargin" id="m3n-YU-bQB"/>
+                                                <constraint firstItem="BKF-g1-xuG" firstAttribute="top" secondItem="Tql-Iz-FzY" secondAttribute="top" id="nRu-aF-uim"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

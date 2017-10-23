@@ -35,4 +35,28 @@ class NetworkManager {
             completion(gifArray)
         }
     }
+    
+    class func getTrendingGifs(completion:@escaping ([Gif]) ->()) {
+        
+        let url = URL(string: "https://api.giphy.com/v1/gifs/trending?api_key=7NvUVoGK7iLPdSx2WolS5eyOJD04pdy3&limit=25&rating=G")
+        var gifArray:[Gif] = []
+        
+        Alamofire.request(url!).responseJSON { (response) in
+            guard let json = response.result.value as? NSDictionary else {return}
+            
+            guard let array: NSArray = (json["data"] as? NSArray) else {return}
+            
+            for case let dictionary as NSDictionary in array {
+                guard let images   = dictionary["images"] as? NSDictionary else {return}
+                guard let original = images["original"] as? NSDictionary else {return}
+                guard let url      = original["url"] as? String else {return}
+                
+                let gif = Gif(URL: url, gifData: UIImage())
+                
+                gifArray.append(gif)
+            }
+            completion(gifArray)
+        }
+    }
+    
 }
