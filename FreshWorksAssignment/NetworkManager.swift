@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import AlamofireImage
 
 class NetworkManager {
     
@@ -23,38 +24,15 @@ class NetworkManager {
             guard let array: NSArray = (json["data"] as? NSArray) else {return}
 
             for case let dictionary as NSDictionary in array {
-                guard let embedURL = dictionary["embed_url"] as? String else {return}
+                guard let images   = dictionary["images"] as? NSDictionary else {return}
+                guard let original = images["original"] as? NSDictionary else {return}
+                guard let url      = original["url"] as? String else {return}
                 
-                let gif = Gif(URL: embedURL, gifData: UIImage())
+                let gif = Gif(URL: url, gifData: UIImage())
+
                 gifArray.append(gif)
             }
-           
-            self.downloadGifs(gifs: gifArray, completion: { (Gifs) in
-                completion(Gifs)
-            })
+            completion(gifArray)
         }
-    
-    }
-    
-    class func downloadGifs(gifs:[Gif],completion:([Gif]) ->()) {
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let fileURL = documentsURL.appendingPathComponent("pig.png")
-            
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        
-        for gif in gifs {
-            Alamofire.download(gif.gifURL, to: destination).response { response in
-                if response.error == nil, let imagePath = response.destinationURL?.path {
-                    guard let image = UIImage(contentsOfFile: imagePath) else {
-                        print("download error")
-                        return
-                    }
-                    gif.gifImage = image
-                }
-            }
-        }
-        completion(gifs)
     }
 }
