@@ -43,10 +43,8 @@ class GifTableViewCell: UITableViewCell {
         
         if (isFave) {
             favouriteGifs.remove(at: index)
-            print("contains gif")
         } else {
             favouriteGifs.append(gif)
-            print("doesn't lol")
         }
         
         let archiveGifs = NSKeyedArchiver.archivedData(withRootObject: favouriteGifs)

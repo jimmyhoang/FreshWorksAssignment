@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Search-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="FreshWorksAssignment" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="searchField" destination="RbB-X1-LeY" id="iMq-bG-UFm"/>
                         <outlet property="tableView" destination="DgH-aj-XL7" id="P9f-ZZ-3c1"/>
@@ -93,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--Second-->
+        <!--Favourites-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="FreshWorksAssignment" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,27 +102,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tQw-pf-C6Q">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="36" width="375" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fNX-1L-XYv">
-                                    <size key="itemSize" width="329" height="287"/>
+                                    <size key="itemSize" width="372" height="287"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="faveGifCell" id="gzn-V4-kXq" customClass="FaveGifCollectionViewCell" customModule="FreshWorksAssignment" customModuleProvider="target">
-                                        <rect key="frame" x="23" y="0.0" width="329" height="287"/>
+                                        <rect key="frame" x="1.5" y="0.0" width="372" height="287"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="329" height="287"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="372" height="287"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-dh-Rp2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="329" height="287"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="372" height="287"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6D-6r-kaL">
-                                                    <rect key="frame" x="283" y="0.0" width="46" height="30"/>
+                                                    <rect key="frame" x="336" y="0.0" width="36" height="30"/>
                                                     <state key="normal" title="F"/>
                                                     <connections>
                                                         <action selector="faveButton:" destination="gzn-V4-kXq" eventType="touchUpInside" id="bAl-xI-BAg"/>
@@ -133,7 +133,7 @@
                                         <constraints>
                                             <constraint firstItem="fXE-dh-Rp2" firstAttribute="leading" secondItem="gzn-V4-kXq" secondAttribute="leading" id="LtZ-bg-heO"/>
                                             <constraint firstItem="A6D-6r-kaL" firstAttribute="top" secondItem="gzn-V4-kXq" secondAttribute="top" id="RWc-vd-xY8"/>
-                                            <constraint firstItem="A6D-6r-kaL" firstAttribute="leading" secondItem="gzn-V4-kXq" secondAttribute="leading" constant="283" id="poq-TE-4vh"/>
+                                            <constraint firstItem="A6D-6r-kaL" firstAttribute="leading" secondItem="gzn-V4-kXq" secondAttribute="leading" constant="336" id="poq-TE-4vh"/>
                                             <constraint firstAttribute="trailing" secondItem="A6D-6r-kaL" secondAttribute="trailing" id="q06-4L-rtc"/>
                                             <constraint firstAttribute="trailing" secondItem="fXE-dh-Rp2" secondAttribute="trailing" id="r7k-61-YBY"/>
                                             <constraint firstAttribute="bottom" secondItem="fXE-dh-Rp2" secondAttribute="bottom" id="sp7-Vx-45p"/>
@@ -152,14 +152,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tQw-pf-C6Q" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="N6f-pE-Hz8"/>
+                            <constraint firstItem="tQw-pf-C6Q" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="16" id="N6f-pE-Hz8"/>
                             <constraint firstItem="tQw-pf-C6Q" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="PfV-63-HCi"/>
                             <constraint firstItem="tQw-pf-C6Q" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="PgX-FK-BNb"/>
                             <constraint firstItem="tQw-pf-C6Q" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="XSj-4S-E8n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="collectionView" destination="tQw-pf-C6Q" id="3DS-5V-UJc"/>
                     </connections>

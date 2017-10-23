@@ -12,25 +12,28 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     @IBOutlet weak var collectionView: UICollectionView!
     var favouriteGifs:[Gif] = []
+    var delegate:FaveGifCellDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let unarchiveGifs = UserDefaults.standard.object(forKey: "favouriteGifs") as? Data {
-            favouriteGifs = NSKeyedUnarchiver.unarchiveObject(with: unarchiveGifs) as! [Gif]
-            collectionView.reloadData()
-        }
+        retrieveGifs()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let unarchiveGifs = UserDefaults.standard.object(forKey: "favouriteGifs") as? Data {
-            favouriteGifs = NSKeyedUnarchiver.unarchiveObject(with: unarchiveGifs) as! [Gif]
-            collectionView.reloadData()
-        }
+        retrieveGifs()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Helpers
+    func retrieveGifs() {
+        if let unarchiveGifs = UserDefaults.standard.object(forKey: "favouriteGifs") as? Data {
+            favouriteGifs = NSKeyedUnarchiver.unarchiveObject(with: unarchiveGifs) as! [Gif]
+            collectionView.reloadData()
+        }
     }
 
     //MARK: UICollectionView
@@ -44,10 +47,18 @@ class SecondViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let imageURL = UIImage.gifImageWithURL(gifUrl: gif.gifURL)
 
+        cell.gif = gif
         cell.gifImage.image = imageURL
+        cell.controllerDelegate = self
 
         return cell
     }
 
+}
+
+extension SecondViewController:FaveGifCellDelegate {
+    func removedFaveGif() {
+        retrieveGifs()
+    }
 }
 
