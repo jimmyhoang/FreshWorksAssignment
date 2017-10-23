@@ -31,13 +31,22 @@ class GifTableViewCell: UITableViewCell {
 
         gif.gifImage = gifImageV.image!
         
-        let isFave = favouriteGifs.contains(gif)
+        var isFave = false
+        var index = 0
+        
+        for fGif in favouriteGifs {
+            if fGif.gifURL == gif.gifURL {
+                index = favouriteGifs.index(of: fGif)!
+                isFave = true
+            }
+        }
         
         if (isFave) {
-            let index = favouriteGifs.index(of: gif)
-            favouriteGifs.remove(at: index!)
+            favouriteGifs.remove(at: index)
+            print("contains gif")
         } else {
             favouriteGifs.append(gif)
+            print("doesn't lol")
         }
         
         let archiveGifs = NSKeyedArchiver.archivedData(withRootObject: favouriteGifs)
