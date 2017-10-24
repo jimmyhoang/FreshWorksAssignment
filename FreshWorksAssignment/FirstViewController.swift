@@ -39,6 +39,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Helpers
     func setupGifs(search:String) {
         gifArray.removeAll()
         indicator.startAnimating()
@@ -66,7 +67,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         return cell
     }
-    
 
     //MARK: UITextFieldDelete
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
